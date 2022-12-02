@@ -1,34 +1,41 @@
-function conexionConServicio(consulta){
-    //Averigura cómo funciona. Devolverá el resultado en un string.
-    return "El resultado de tu consulta '"+consulta+"' es ........";
+
+
+async function handleFormSubmit(event){
+   event.preventDefault();
+   const form = event.currentTarget;
+   const url = form.action;
+    try{
+        const formData = new FormData(form);        
+        const responseData = await postFormDataAsJson({ url, formData });
+        console.log({ responseData });
+    } catch(error){
+        console.error(error);
+    }
+    
 }
 
-function enviarConsulta(){
-    const formulario = document.querySelector('.formulario');
-    formulario.addEventListener('submit', function (evento) {
-        evento.preventDefault();
-        // console.log('Hola');
-        const consulta = document.getElementById("consulta");
-        console.log(consulta);
-        const respuesta = document.getElementById("resultado");
-        const url = '127.0.0.1:5000/ipaddress/';
-        const http = new XMLHttpRequest();
-
-        http.open("POST", url);
-        http.setRequestHeader("Content-Type","application/json");
-
-        http.onreadystatechange = function(){
-            if(this.readyState == 4){
-                console.log(http.status);
-                console.log(http.responseText);
-               // var resultado = JSON.parse(this.responseText)
-               // console.log(resultado.name)
-            }
-        }
-        var data = `{
-            "IP": "10.0.2.4"
-          }`;
-        http.send(data)
-       //  respuesta.textContent=conexionConServicio(consulta.value);
-    })
+async function postFormDataAsJson({ url, formData }) {
+    const plainFormData = Object.fromEntries(formData.entries());
+	const formDataJsonString = JSON.stringify(plainFormData);
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+			"Content-Type": "application/json",
+			"Accept": "application/json"
+		},
+        body: formDataJsonString,
+    };
+    const response = await fetch(url, fetchOptions);
+    if (!response.ok) {
+		const errorMessage = await response.text();
+		throw new Error(errorMessage);
+	}
+    return response.json();
 }
+
+const formIP = document.getElementbyId("formulario-ips");   
+formIP.addEventListener("submit", handleFormSubmit);
+        
+        
+        
+  
