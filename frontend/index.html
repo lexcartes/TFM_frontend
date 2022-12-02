@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Web de Álex</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__texto">La web de Álex</h1>
+    </header>
+
+    <div class="cuerpo contenedor contenido-principal">
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="consulta">Introduzca IP o rango:</label>
+                <input class="campo__field" type="text" placeholder="e.g. 192.168.1.1, 192.168.1.1/24, 192.168.1.1,2" id="consulta">
+            </div>
+            <div class="campo">
+                <p id="resultado"></p>
+            </div>
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton" onclick="enviarConsulta()">
+            </div>
+        </form>
+
+    </div>
+
+    <footer class="pie">
+        <h3>La web de Álex</h3>
+    </footer>
+</body>
+</html>

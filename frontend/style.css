@@ -1,0 +1,117 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --grisClaro: #DFE9F3;
+
+    --fuente-principal: 3.8rem;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--grisClaro);
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+.header {
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10rem;
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--oscuro);
+    margin-top: 5rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+
+.formulario{
+    background-color: var(--blanco);
+    margin: 5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+    border:#212121;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 3rem;
+}
+
+.boton {
+    display: block;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--oscuro);
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 2rem;
+    border: none;
+    border-radius: 6px;
+}
+
+.boton:hover{
+    cursor: pointer;
+    background-color: #DFE9F3;
+}
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 3rem;
+    font-size: medium;
+}
+
+.footer {
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
