@@ -15,16 +15,14 @@
     </header>
 
     <div class="cuerpo contenedor contenido-principal">
-        <form action="127.0.0.1:5000/ipaddress/" class="formulario">
+        <form action="127.0.0.1:5000/ipaddress/" id="formulario-ips">
             <div class="campo">
                 <label class="campo__label" for="consulta">Introduzca IP o rango:</label>
                 <input class="campo__field" type="text" placeholder="e.g. 192.168.1.1, 192.168.1.1/24, 192.168.1.1,2" id="consulta">
             </div>
+            
             <div class="campo">
-                <p id="resultado"></p>
-            </div>
-            <div class="campo">
-                <input type="submit" value="Enviar" class="boton" onclick="enviarConsulta()">
+                <input type="submit" value="Analizar" onclick="enviarConsulta()">
             </div>
         </form>
 
