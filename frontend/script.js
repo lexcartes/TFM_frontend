@@ -18,7 +18,7 @@ function enviarConsulta(){
         http.setRequestHeader("Content-Type","application/json");
 
         http.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
+            if(this.readyState == 4){
                 console.log(http.status);
                 console.log(http.responseText);
                // var resultado = JSON.parse(this.responseText)
